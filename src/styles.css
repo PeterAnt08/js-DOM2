@@ -1,73 +1,58 @@
 body {
-  font-family: 'Montserrat', sans-serif; /* Задано шрифт Montserrat */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #f0f0f0; /* Світло-сірий фон */
-}
-
-header {
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0; /* Той же світло-сірий фон */
-  width: 100%;
-  margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
 h1 {
-  margin: 0;
-  font-weight: 700; /* Жирний шрифт для заголовка */
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    margin-bottom: 30px;
+    color: #444;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
-  gap: 0; /* Спочатку відключаємо gap */
-  width: calc(100% - 6%); /* Врахування відступів */
-  margin: 20px 0;
-  padding: 0; /* Відключаємо внутрішні відступи */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
 }
 
-img {
-  border-radius: 10px;
-  width: 100%; /* Ширина 100% від колонки */
-  height: auto; /* Автоматична висота */
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap; /* Дозволяє кнопкам переходити на новий рядок */
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  width: calc(100% - 6%); /* Врахування відступів з обох сторін */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-button {
-  flex: 1; /* Дозволяє кнопкам займати доступний простір */
-  padding: 15px; /* Збільшено розмір кнопки */
-  border: none;
-  border-radius: 20px; /* Збільшено радіус заокруглення */
-  background-color: #e60023; /* Новий колір фону кнопок */
-  color: white;
-  cursor: pointer;
-  font-size: 16px; /* Збільшено розмір тексту на 3 пункти */
-  font-family: 'Montserrat', sans-serif; /* Шрифт кнопок Montserrat */
-  min-width: 150px; /* Мінімальна ширина кнопки */
+.buttons button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #b3001a; /* Темніший колір при наведенні */
+.buttons button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
